@@ -11,7 +11,7 @@ tags: [Camera, 3D]
 # Introduction
 - 우리가 실제 눈으로 보는 세상은 3차원, 이걸 카메라로 찍으면 2차원의 이미지
 - 실제 이미지에는 카메라의 위치와 방향 같은 extrinsic parameter 외에도 사용된 렌즈, 렌즈와 이미지 센서와의 거리, 렌즈와 이미지 센서가 이루는 각 등 intrinsic parameter가 영향을 끼침
-- 3차원 점이 이미지에 투영된 위치를 구하거나 역으로 이미지에서 3차원 좌표를 복원할 때는 intrinsic parameter를 제거해야 함
+- 3차원 점이 이미지에 투영된 위치를 구하거나 역으로 이미지에서 3차원 좌표를 복원할 때는 이러한 내부 요인을 제거해야 함
 - 이러한 intrinsic/extrinsic parameter를 구하는 과정이 **Camera Calibration**
 
 
@@ -54,3 +54,15 @@ tags: [Camera, 3D]
     - 수식으로 표현하면 $$x=f_{x}X/Z+cx, y=f_{y}Y/Z+cy$$
 - principal point에 대한 자세한 설명은 다음 그림 참고.
 ![image](https://github.com/hannixxxoh/product_serving/assets/91474981/d7b92238-8fce-4b36-9ac0-e66f426ba15b)
+
+## principal point(주점)
+- 주점 cx, cy: 카메라 렌즈의 중심에서 이미지 센서에 내린 수선의 발의 영상 좌표(단위: 픽셀)
+
+## skew coefficient(비대칭 계수)
+- 이미지 센서의 cell array의 y축이 기울어진 정도
+- skew_c = $$\tan a$$
+- 요즘 카메라는 skew 에러가 거의 없기 때문에 대부분 skew_c = 0
+
+# Extrinsic Parameter
+- 카메라 좌표계와 월드 좌표계 사이의 변환 관계를 설명하는 파라미터
+- 두 좌표계 사이의 회전(rotation)과 평행이동(translation)으로 푷ㄴ
