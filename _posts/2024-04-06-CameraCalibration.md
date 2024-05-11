@@ -65,4 +65,4 @@ tags: [Camera, 3D]
 
 # Extrinsic Parameter
 - 카메라 좌표계와 월드 좌표계 사이의 변환 관계를 설명하는 파라미터
-- 두 좌표계 사이의 회전(rotation)과 평행이동(translation)으로 푷ㄴ
+- 두 좌표계 사이의 회전(rotation)과 평행이동(translation)으로 표현
